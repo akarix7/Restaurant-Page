@@ -1,4 +1,5 @@
 import "./style.css";
+import buildHome from "./home.js";
 
 const detail = [
     {
@@ -26,11 +27,13 @@ const detail = [
 const nav = () => {
     let links = ["Home", "About", "Menu", "Contact"];
     const navBar = document.createElement("nav");
-    // content.appendChild(navBar);
 
     for(let i = 0; i < 3; i++){
         let li = document.createElement("li");
         li.textContent = links[i];
+        li.addEventListener("click", e => {
+            buildHome();
+        })
         navBar.appendChild(li);
     }
     return navBar;
@@ -38,6 +41,7 @@ const nav = () => {
 
 const main = () => {
     const mn = document.createElement("main");
+    mn.id = "main";
     // content.appendChild(mn);
 
     detail.forEach((item) => {
@@ -65,4 +69,6 @@ const init = () => {
 }
 
 init();
+
+export default init;
 console.log("hello!!!");
