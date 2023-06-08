@@ -29,6 +29,11 @@ const setHome = () => {
 }
 
 const buildHome = () => {
+    if(document.getElementById("main")){
+        console.log("main exists...deleting...")
+        const main = document.getElementById("main");
+        main.remove();
+    }
     // const main = document.getElementById("main");
     // main.textContent = "hello";
     //main(detail);

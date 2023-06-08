@@ -69,27 +69,46 @@ const nav = () => {
 
 const main = (data) => {
     console.log("entering main...");
-    const mn = document.createElement("main");
-    mn.id = "main";
-    // document.getElementById("content").appendChild(mn);
+
+    let mainElm = document.getElementById("main");
+
+    if(!mainElm){
+        mainElm = document.createElement("main");
+        mainElm.id = "main";
+    }
+    //mainElm.id = "main";
     // content.appendChild(mn);
-    data.forEach((item) => {
-        console.log("entering data for loop");
-        const sec = section();
-        mn.appendChild(sec);
-        let title = document.createElement("h2");
-        title.textContent = item.name;
-        let secText = document.createElement("p");
-        secText.innerHTML = item.text;
-        sec.append(title, secText);
-    })
+    const sec = section(data);
+    mainElm.appendChild(sec);
+
+
+    // data.forEach((item) => {
+    //     console.log("entering data for loop");
+    //     const sec = section();
+    //     mn.appendChild(sec);
+    //     let title = document.createElement("h2");
+    //     title.textContent = item.name;
+    //     let secText = document.createElement("p");
+    //     secText.innerHTML = item.text;
+    //     sec.append(title, secText);
+    // })
     //mn.appendChild(section());
 
-    return mn;
+    return mainElm;
 }
 
-const section = () => {
-    return document.createElement("section");
+const section = (data) => {
+    const sec = document.createElement("section");
+    data.forEach((item) => {
+        console.log("entering data for loop");
+        let title = document.createElement("h2");
+        title.textContent = item.name;
+
+        let text = document.createElement("p");
+        text.innerHTML = item.text;
+        sec.append(title, text);
+    })
+    return sec;
 }
 
 const init = () => {
