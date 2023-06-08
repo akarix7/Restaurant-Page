@@ -1,5 +1,6 @@
 import "./style.css";
 import buildHome from "./home.js";
+import buildAbout from "./about.js";
 
 const detail = [
     {
@@ -24,27 +25,56 @@ const detail = [
     }
 ];
 
+const container = () => {
+    console.log("container");
+    return document.getElementById("content");
+}
+
 const nav = () => {
     let links = ["Home", "About", "Menu", "Contact"];
     const navBar = document.createElement("nav");
 
-    for(let i = 0; i < 3; i++){
-        let li = document.createElement("li");
-        li.textContent = links[i];
-        li.addEventListener("click", e => {
-            buildHome();
-        })
-        navBar.appendChild(li);
-    }
+    let home = document.createElement("li");
+    home.textContent = "Home";
+    home.addEventListener("click", e => {
+        console.log("home nav clicked");
+        container().appendChild(main(buildHome()));
+    })
+
+    let about = document.createElement("li");
+    about.textContent = "About";
+    about.addEventListener("click", e => {
+        console.log("about nav clicked");
+        container().appendChild(main(buildAbout()));
+    })
+
+    navBar.append(home, about);
+
+    // let menu = document.createElement("li");
+    // menu.textContent = "Menu";
+    // menu.addEventListener("click", e => {
+    //     buildMenu();
+    // })
+
+    // for(let i = 0; i < 3; i++){
+    //     let li = document.createElement("li");
+    //     li.textContent = links[i];
+    //     li.addEventListener("click", e => {
+    //         buildHome();
+    //     })
+    //     navBar.appendChild(li);
+    // }
     return navBar;
 }
 
-const main = () => {
+const main = (data) => {
+    console.log("entering main...");
     const mn = document.createElement("main");
     mn.id = "main";
+    // document.getElementById("content").appendChild(mn);
     // content.appendChild(mn);
-
-    detail.forEach((item) => {
+    data.forEach((item) => {
+        console.log("entering data for loop");
         const sec = section();
         mn.appendChild(sec);
         let title = document.createElement("h2");
@@ -63,12 +93,14 @@ const section = () => {
 }
 
 const init = () => {
-    const content = document.getElementById("content");
-    content.appendChild(nav());
-    content.appendChild(main());
+    // const content = document.getElementById("content");
+    // content.appendChild(nav());
+    // content.appendChild(main(buildHome()));
+    container().append(nav(), main(buildHome()));
 }
 
 init();
 
-export default init;
+export default main;
+
 console.log("hello!!!");

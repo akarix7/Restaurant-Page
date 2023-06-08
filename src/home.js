@@ -1,6 +1,6 @@
-import init from "./index.js";
+import main from "./index.js";
 
-const detail = [
+const data = [
     {
         name: "About",
         text: "Welcome to Happy Tails Cafe, where cozy meets cute. Our cafe is a haven for all animal lovers, complete with delicious treats, fresh coffee, and furry friends aplenty. Come visit us and enjoy a purrrfectly delightful experience unlike any other."
@@ -29,8 +29,10 @@ const setHome = () => {
 }
 
 const buildHome = () => {
-    const main = document.getElementById("main");
-    main.textContent = "hello";
+    // const main = document.getElementById("main");
+    // main.textContent = "hello";
+    //main(detail);
+    return data;
 }
 
 export default buildHome;
