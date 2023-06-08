@@ -76,38 +76,26 @@ const main = (data) => {
         mainElm = document.createElement("main");
         mainElm.id = "main";
     }
-    //mainElm.id = "main";
     // content.appendChild(mn);
-    const sec = section(data);
-    mainElm.appendChild(sec);
-
-
-    // data.forEach((item) => {
-    //     console.log("entering data for loop");
-    //     const sec = section();
-    //     mn.appendChild(sec);
-    //     let title = document.createElement("h2");
-    //     title.textContent = item.name;
-    //     let secText = document.createElement("p");
-    //     secText.innerHTML = item.text;
-    //     sec.append(title, secText);
-    // })
-    //mn.appendChild(section());
+    data.forEach((item) => {
+        const sec = section(item);
+        mainElm.appendChild(sec);
+    })
 
     return mainElm;
 }
 
-const section = (data) => {
+const section = (item) => {
     const sec = document.createElement("section");
-    data.forEach((item) => {
-        console.log("entering data for loop");
-        let title = document.createElement("h2");
-        title.textContent = item.name;
 
-        let text = document.createElement("p");
-        text.innerHTML = item.text;
-        sec.append(title, text);
-    })
+    console.log("entering data for loop");
+    let title = document.createElement("h2");
+    title.textContent = item.name;
+
+    let text = document.createElement("p");
+    text.innerHTML = item.text;
+    sec.append(title, text);
+
     return sec;
 }
 
