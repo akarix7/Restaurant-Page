@@ -25,30 +25,53 @@ const detail = [
     }
 ];
 
-const container = () => {
-    console.log("container");
-    return document.getElementById("content");
+const appendContent = (...els) => {
+    console.log("appendContent");
+    const content = document.getElementById("content");
+    els.forEach((el) => {
+        console.log("elements--appendContent: " + el);
+        content.appendChild(el);
+    })
+    return content;
 }
 
 const nav = () => {
-    let links = ["Home", "About", "Menu", "Contact"];
+    //let links = ["Home", "About", "Menu", "Contact"];
+    const links = new Map();
+    links.set(0, ["Home", buildHome]);
+    links.set(1, ["About", buildAbout]);
+    // links.set(2, ["Menu", buildMenu]);
+    // links.set(3, ["Contact", buildContact]);
+
     const navBar = document.createElement("nav");
 
-    let home = document.createElement("li");
-    home.textContent = "Home";
-    home.addEventListener("click", e => {
-        console.log("home nav clicked");
-        container().appendChild(main(buildHome()));
+    links.forEach((link)=> {
+        const li = document.createElement("li");
+        li.textContent = link[0];
+        li.addEventListener("click", e=> {
+            link[1]();
+            appendContent(link[1]());
+            //need to add appendContent.appendChild here.
+        })
+        navBar.appendChild(li);
     })
 
-    let about = document.createElement("li");
-    about.textContent = "About";
-    about.addEventListener("click", e => {
-        console.log("about nav clicked");
-        container().appendChild(main(buildAbout()));
-    })
+    // const home = document.createElement("li");
+    // home.textContent = "Home";
+    // home.addEventListener("click", e => {
+    //     console.log("home nav clicked");
+    //     appendContent(buildHome());
+    // })
+    //
+    // const about = document.createElement("li");
+    // about.textContent = "About";
+    // about.addEventListener("click", e => {
+    //     console.log("about nav clicked");
+    //     appendContent(buildAbout());
+    //     //content.appendChild(main(buildAbout()));
+    // })
 
-    navBar.append(home, about);
+    //navBar.append(home, about);
 
     // let menu = document.createElement("li");
     // menu.textContent = "Menu";
@@ -100,10 +123,10 @@ const section = (item) => {
 }
 
 const init = () => {
-    // const content = document.getElementById("content");
     // content.appendChild(nav());
     // content.appendChild(main(buildHome()));
-    container().append(nav(), main(buildHome()));
+    //appendContent().append(nav(), main(buildHome()));
+    appendContent(nav(), main(buildHome()));
 }
 
 init();

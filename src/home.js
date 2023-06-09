@@ -24,20 +24,21 @@ const data = [
     }
 ];
 
-const setHome = () => {
-
-}
-
 const buildHome = () => {
     if(document.getElementById("main")){
         console.log("main exists...deleting...")
-        const main = document.getElementById("main");
-        main.remove();
+        const mainElem = document.getElementById("main");
+        mainElem.remove();
+    }
+    else{
+        //need to fix, bc buildHome gets called twice, once deletes the main then enters again, may need to fix main()
+        console.log("else home");
+        return data;
     }
     // const main = document.getElementById("main");
     // main.textContent = "hello";
     //main(detail);
-    return data;
+    return main(data);
 }
 
 export default buildHome;

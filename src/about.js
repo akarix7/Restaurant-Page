@@ -1,3 +1,5 @@
+import main from "./index.js";
+
 const data = [
     {
         name: "Welcome to Happy Tails Cafe",
@@ -16,11 +18,12 @@ Thank you for considering our café for your next outing or event. We hope to se
 const buildAbout = () => {
     if(document.getElementById("main")){
         console.log("main exists...deleting...")
-        const main = document.getElementById("main");
-        main.remove();
+        const mainElem = document.getElementById("main");
+        mainElem.remove();
     }
+    // console.log(main(data));
 
-    return data;
+    return main(data);
 }
 
 export default buildAbout;
