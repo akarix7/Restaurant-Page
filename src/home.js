@@ -31,7 +31,6 @@ const buildHome = () => {
         mainElem.remove();
     }
     else{
-        //need to fix, bc buildHome gets called twice, once deletes the main then enters again, may need to fix main()
         console.log("else home");
         return data;
     }
