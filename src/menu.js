@@ -22,6 +22,11 @@ const data = [
         category: "Drinks"
     },
     {
+        name: "Cozy Chamomile Hot Tea",
+        text: "A comforting and soothing cup of hot tea. Our Cozy Chamomile blend combines the gentle sweetness of chamomile flowers, the subtle hint of honey, and the warm aroma of vanilla",
+        category: "Drinks"
+    },
+    {
         name: "Peachy Keen Iced Tea",
         text: "A refreshing iced tea infused with peach flavor and served with peach-shaped ice cubes.",
         category: "Drinks"
@@ -32,28 +37,28 @@ const data = [
         category: "Drinks"
     },
     {
-        name: "Pink Petal Tea",
-        text: "A delicate and floral Japanese tea made with cherry blossoms, served in a dainty teapot and cups.",
-        category: "Drinks"
-    },
-    {
         name: "Cinnamon Swirl Latte",
         text: "A cozy latte made with a sweet maple syrup and frothy milk, topped with a heart-shaped latte art.",
         category: "Drinks"
     },
     {
-        name: "Black Pearl Delight: ",
+        name: "Sakura Blossom Bubble Tea",
+        text: "A refreshing and floral blend of cherry blossom (sakura) tea and creamy milk, with tapioca pearls added for a delightful texture. A perfect way to welcome Spring!",
+        category: "Drinks"
+    },
+    {
+        name: "Black Pearl Delight",
         text: "A traditional milk tea made with black tea, creamy milk, and sweetened with a touch of sugar, then topped off with chewy tapioca pearls.",
         category: "Drinks"
     },
     {
-        name: "Berry Matcha Marble: ",
+        name: "Berry Matcha Marble",
         text: "This refreshing milk tea is made with a blend of sweet strawberry, earthy matcha green tea, and creamy milk, paired with chewy tapioca pearls for a fun and unique texture combination.",
         category: "Drinks"
     },
     {
-        name: "Fossilized Cookies",
-        text: "Delicious sugar cookies shaped like fossilized animal tracks, perfect for dunking in your tea or cocoa",
+        name: "Teddy's Peanut Butter Pawprint Cookies",
+        text: "Baked to perfection with a soft and chewy center, and features a cute paw print design on top.",
         category: "Desserts"
     },
     {
