@@ -55,7 +55,17 @@ const main = (data) => {
         mainElm.id = "main";
     }
     // content.appendChild(mn);
+    let currentCategory;
+
     data.forEach((item) => {
+        if(item.category && item.category !== currentCategory){
+            currentCategory = item.category;
+            const title = document.createElement("h2");
+            title.className = "course";
+            title.textContent = currentCategory;
+            mainElm.appendChild(title);
+        }
+
         const sec = section(item);
         mainElm.appendChild(sec);
     })
@@ -67,7 +77,7 @@ const section = (item) => {
     const sec = document.createElement("section");
 
     console.log("entering data for loop");
-    let title = document.createElement("h2");
+    let title = document.createElement("h3");
     title.textContent = item.name;
 
     let text = document.createElement("p");
