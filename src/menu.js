@@ -1,4 +1,5 @@
 import main from "./index.js";
+import images from "./img/images.js";
 
 const data = [
     {
@@ -73,14 +74,45 @@ const data = [
     }
 ]
 
+const findClass = (element, className) => {
+    if(element.className === className){
+        return element;
+    }else {
+        element = element.nextElementSibling;
+        findClass(element, className);
+    }
+    return element;
+}
+
+const addImages = (menu) => {
+    let element = menu.firstElementChild;
+    let i = 0;
+
+    Object.values(images).forEach( (image) => {
+        const img = document.createElement("img");
+        img.src = `${image}`;
+        img.alt = data[i++].name;
+
+        let prevElement = element;
+        // prevElement.appendChild(img);
+
+        element = findClass(element, "menu");
+        element.appendChild(img);
+        element = element.nextElementSibling;
+    })
+}
+
 const buildMenu = () => {
     if(document.getElementById("main")){
         console.log("main exists...deleting...")
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }
+    const menuPage = main(data);
+    addImages(menuPage);
+    //console.log(menuPage);
 
-    return main(data);
+    return menuPage;
 }
 
 export default buildMenu;

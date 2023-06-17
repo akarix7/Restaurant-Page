@@ -75,6 +75,9 @@ const main = (data) => {
 
 const section = (item) => {
     const sec = document.createElement("section");
+    if(item.category){
+        sec.className = "menu";
+    }
 
     console.log("entering data for loop");
     let title = document.createElement("h3");
