@@ -54,25 +54,43 @@ main{
   min-height: calc(100vh - 93px);
   width: 80vw;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr; /* 1fr*/
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+  gap: 30px; /*taken out*/
 }
 
 main img {
-  width: 300px;
-  height: 300px;
+  width: 100%; /*300px*/
+  height: 100%; /*300px*/
   object-fit: cover;
   border-radius: 75px;
+}
+
+main h2{
+  grid-column: 1 / -1;
 }
 
 section{
   background-color: var(--section);
   border-radius: 15px;
-  padding: 10px;
+  /*padding: 10px; !*taken out*!*/
   margin: 10px auto;
-  width: 50%;
+  width: 100%; /*50%*/
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.text-overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .course{

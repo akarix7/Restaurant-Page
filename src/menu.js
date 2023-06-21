@@ -93,11 +93,23 @@ const addImages = (menu) => {
         img.src = `${image}`;
         img.alt = data[i++].name;
 
+        const overlay = document.createElement("div");
+        overlay.className = "text-overlay";
+
+
         let prevElement = element;
         // prevElement.appendChild(img);
 
         element = findClass(element, "menu");
-        element.appendChild(img);
+
+        element.prepend(overlay);
+        element.prepend(img);
+
+        const secH3 = element.querySelector("h3");
+        const secP = element.querySelector("p");
+        overlay.append(secH3);
+        overlay.append(secP);
+
         element = element.nextElementSibling;
     })
 }
