@@ -21,9 +21,10 @@ const buildAbout = () => {
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }
-    // console.log(main(data));
+    const aboutPage = main(data);
+    aboutPage.className = "about-page";
 
-    return main(data);
+    return aboutPage;
 }
 
 export default buildAbout;

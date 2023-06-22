@@ -21,7 +21,10 @@ const buildContact = () => {
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }
-    return main(data);
+    const contactPage = main(data);
+    contactPage.className = "contact-page";
+
+    return contactPage;
 }
 
 export default buildContact;

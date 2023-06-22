@@ -75,13 +75,17 @@ main h2{
 section{
   background-color: var(--section);
   border-radius: 15px;
-  /*padding: 10px; !*taken out*!*/
+  padding: 10px; /*taken out*/
   margin: 10px auto;
-  width: 100%; /*50%*/
+  width: 50%; /*50%*/
+}
+
+section.menu {
+  padding: 0;
+  width: 100%;
   height: 300px;
   overflow: hidden;
   position: relative;
-
 }
 
 .text-overlay{

@@ -75,7 +75,7 @@ const data = [
 ]
 
 const findClass = (element, className) => {
-    if(element.className === className){
+    if(element.className === className || element.id === className){
         return element;
     }else {
         element = element.nextElementSibling;
@@ -107,8 +107,7 @@ const addImages = (menu) => {
 
         const secH3 = element.querySelector("h3");
         const secP = element.querySelector("p");
-        overlay.append(secH3);
-        overlay.append(secP);
+        overlay.append(secH3, secP);
 
         element = element.nextElementSibling;
     })
@@ -121,8 +120,8 @@ const buildMenu = () => {
         mainElem.remove();
     }
     const menuPage = main(data);
+    menuPage.className = "menu-page";
     addImages(menuPage);
-    //console.log(menuPage);
 
     return menuPage;
 }

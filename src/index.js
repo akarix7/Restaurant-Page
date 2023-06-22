@@ -77,6 +77,8 @@ const section = (item) => {
     const sec = document.createElement("section");
     if(item.category){
         sec.className = "menu";
+    }else{
+        sec.className = "regular";
     }
 
     console.log("entering data for loop");
