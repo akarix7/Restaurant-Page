@@ -3,6 +3,7 @@ import buildHome from "./home.js";
 import buildAbout from "./about.js";
 import buildMenu from "./menu.js";
 import buildContact from "./contact.js";
+import {other} from "./img/images.js";
 
 const appendContent = (...els) => {
     console.log("appendContent");
@@ -77,8 +78,6 @@ const section = (item) => {
     const sec = document.createElement("section");
     if(item.category){
         sec.className = "menu";
-    }else{
-        sec.className = "regular";
     }
 
     console.log("entering data for loop");
@@ -93,7 +92,15 @@ const section = (item) => {
 }
 
 const init = () => {
-    appendContent(nav(), main(buildHome()));
+    const homePage = main(buildHome());
+    homePage.className = "home-page";
+
+    const homeImg = document.createElement("img");
+    homeImg.src = `${other.home01}`;
+    homeImg.alt = "Cafe";
+    homePage.prepend(homeImg);
+
+    appendContent(nav(), homePage);
 }
 
 init();

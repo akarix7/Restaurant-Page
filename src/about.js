@@ -1,4 +1,5 @@
 import main from "./index.js";
+import {other} from "./img/images.js";
 
 const data = [
     {
@@ -23,6 +24,11 @@ const buildAbout = () => {
     }
     const aboutPage = main(data);
     aboutPage.className = "about-page";
+
+    const aboutImg = document.createElement("img");
+    aboutImg.src = `${other.about01}`;
+    aboutImg.alt = "Cafe";
+    aboutPage.prepend(aboutImg);
 
     return aboutPage;
 }

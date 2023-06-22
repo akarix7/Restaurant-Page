@@ -11,7 +11,7 @@ const data = [
     },
     {
         name: "Address",
-        text: "Happy Tails Café Nooks Neighborhood Café<br>123 Bell Tree Lane<br>New Horizons, AC 12345"
+        text: "Happy Tails Café<br>123 Bell Tree Lane<br>New Horizons, AC 12345"
     }
 ]
 

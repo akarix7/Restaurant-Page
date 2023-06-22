@@ -1,9 +1,10 @@
 import main from "./index.js";
+import {other} from "./img/images";
 
 const data = [
     {
         name: "About",
-        text: "Welcome to Happy Tails Cafe, where cozy meets cute. Our cafe is a haven for all animal lovers, complete with delicious treats, fresh coffee, and furry friends aplenty. Come visit us and enjoy a purrrfectly delightful experience unlike any other."
+        text: "Welcome to Happy Tails Café, where cozy meets cute. Our cafe is a haven for all animal lovers, complete with delicious treats, fresh coffee, and furry friends aplenty. Come visit us and enjoy a purrrfectly delightful experience unlike any other."
     },
     {
         name: "Hours",
@@ -20,7 +21,7 @@ const data = [
     },
     {
         name: "Location",
-        text: "Happy Tails Cafe Nooks Neighborhood Café<br>123 Bell Tree Lane<br>New Horizons, AC 12345"
+        text: "Happy Tails Café<br>123 Bell Tree Lane<br>New Horizons, AC 12345"
     }
 ];
 
@@ -34,10 +35,16 @@ const buildHome = () => {
         console.log("else home");
         return data;
     }
-    // const main = document.getElementById("main");
-    // main.textContent = "hello";
-    //main(detail);
-    return main(data);
+
+    const homePage = main(data);
+    homePage.className = "home-page";
+
+    const homeImg = document.createElement("img");
+    homeImg.src = `${other.home01}`;
+    homeImg.alt = "Cafe";
+    homePage.prepend(homeImg);
+
+    return homePage;
 }
 
 export default buildHome;

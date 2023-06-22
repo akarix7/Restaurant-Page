@@ -1,5 +1,5 @@
 import main from "./index.js";
-import images from "./img/images.js";
+import {images} from "./img/images.js";
 
 const data = [
     {

@@ -15,4 +15,14 @@ const images = {
     dessert03: require("./diy-animal-cookie-plate.jpg")
 }
 
-export default images;
+const other = {
+    home01: require("./cafe.jpg"),
+    about01: require("./about.jpg")
+}
+
+export {
+    images,
+    other
+}
+
+//export default images;
