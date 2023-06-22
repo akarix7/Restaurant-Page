@@ -96,14 +96,8 @@ const addImages = (menu) => {
         const overlay = document.createElement("div");
         overlay.className = "text-overlay";
 
-
-        let prevElement = element;
-        // prevElement.appendChild(img);
-
         element = findClass(element, "menu");
-
-        element.prepend(overlay);
-        element.prepend(img);
+        element.prepend(overlay, img);
 
         const secH3 = element.querySelector("h3");
         const secP = element.querySelector("p");
@@ -115,7 +109,6 @@ const addImages = (menu) => {
 
 const buildMenu = () => {
     if(document.getElementById("main")){
-        console.log("main exists...deleting...")
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }

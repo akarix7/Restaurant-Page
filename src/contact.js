@@ -17,7 +17,6 @@ const data = [
 
 const buildContact = () => {
     if(document.getElementById("main")){
-        console.log("main exists...deleting...")
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }

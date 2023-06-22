@@ -24,5 +24,3 @@ export {
     images,
     other
 }
-
-//export default images;

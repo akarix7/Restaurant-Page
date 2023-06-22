@@ -18,7 +18,6 @@ Thank you for considering our café for your next outing or event. We hope to se
 
 const buildAbout = () => {
     if(document.getElementById("main")){
-        console.log("main exists...deleting...")
         const mainElem = document.getElementById("main");
         mainElem.remove();
     }

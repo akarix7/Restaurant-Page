@@ -6,10 +6,9 @@ import buildContact from "./contact.js";
 import {other} from "./img/images.js";
 
 const appendContent = (...els) => {
-    console.log("appendContent");
     const content = document.getElementById("content");
+
     els.forEach((el) => {
-        console.log("elements--appendContent: " + el);
         content.appendChild(el);
     })
     return content;
@@ -27,35 +26,23 @@ const nav = () => {
     links.forEach((link)=> {
         const li = document.createElement("li");
         li.textContent = link[0];
-        li.addEventListener("click", e=> {
-            //link[1]();
+        li.addEventListener("click", () => {
             appendContent(link[1]());
         })
         navBar.appendChild(li);
     })
 
-    // const home = document.createElement("li");
-    // home.textContent = "Home";
-    // home.addEventListener("click", e => {
-    //     console.log("home nav clicked");
-    //     appendContent(buildHome());
-    // })
-
-
-    //navBar.append(home, about);
     return navBar;
 }
 
 const main = (data) => {
-    console.log("entering main...");
-
     let mainElm = document.getElementById("main");
 
     if(!mainElm){
         mainElm = document.createElement("main");
         mainElm.id = "main";
     }
-    // content.appendChild(mn);
+
     let currentCategory;
 
     data.forEach((item) => {
@@ -80,7 +67,6 @@ const section = (item) => {
         sec.className = "menu";
     }
 
-    console.log("entering data for loop");
     let title = document.createElement("h3");
     title.textContent = item.name;
 
